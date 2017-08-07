@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authorize!, only: [:edit, :update, :destroy]
+  before_action
 
   def index
   end
 
   def show
+    @user = User.first
   end
 
   def new
